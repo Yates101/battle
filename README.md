@@ -1,3 +1,13 @@
+# Battle challenge
+
+For this challenge, I have used the below user stories to create a simple battle game.
+* Pending prettifying and increased complexity
+
+This exercise was used to focus on:
+- Test driven web development, using capybara
+- Using rackup to carry out feature tests
+- Splitting up responsibilities according to the MVC framework
+
 ```
 As two Players,
 So we can play a personalised game of Battle,

@@ -1,7 +1,6 @@
 require 'game'
 
 describe Game do
-
   let(:player_1_mock) { double(Player, hitpoints: 60, name: "Taran") }
   let(:player_2_mock) { double(Player, hitpoints: 60, name: "Alec") }
   let(:players_game) { Game.new(player_1_mock, player_2_mock) }
@@ -13,12 +12,20 @@ describe Game do
     end
   end
 
-  context 'attack' do
-
+  describe 'attack' do
     it 'casuses damage' do
       player = spy(:player)
       players_game.attack(player)
       expect(player).to have_received(:take_damage)
+    end
+
+    context 'when a users HP reaches 0' do
+      let(:losing_player) { double(Player, hitpoints: 0, name: "Alec") }
+
+      it 'ends the game' do
+        endgame = Game.new(player_1_mock, losing_player)
+        expect(endgame.game_over?).to eq true 
+      end
     end
   end
 
@@ -34,6 +41,12 @@ describe Game do
         allow(player_2_mock).to receive(:take_damage)
         players_game.attack(player_2_mock)
         expect(players_game.turn).to eq "Alec"
+      end
+
+      it 'changes the recipient' do
+        allow(player_2_mock).to receive(:take_damage)
+        players_game.attack(player_2_mock)
+        expect(players_game.recipient).to eq player_1_mock
       end
     end
   end

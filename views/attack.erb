@@ -1,3 +1,5 @@
-<h2> <%= @player_1_name %> attacked <%= @player_2_name %>!!! </h2>
-<h2> <%= @player_1_hit_points %>/60 HP </h2>
-<h2> <%= @player_2_hit_points %>/60 HP </h2>
+<h2> <%= @game.recipient.name %> attacked <%= @game.turn %>!!! </h2>
+<br>
+<form action="/play" method="get">
+  <input type="submit" value="Continue">
+</form>
