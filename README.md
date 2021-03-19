@@ -45,6 +45,9 @@ As a Player,
 So I can Lose a game of Battle,
 I want to see a 'Lose' message if I reach 0HP first
 And some Advanced 'extension' User Stories:
+```
+*I have reached this point
+```
 
 As a Player,
 So I can play a suspenseful game of Battle,
@@ -78,3 +81,7 @@ As a Player,
 So I can enjoy my game of Battle,
 I want a sexy user interface
 ```
+
+## Goal interface
+
+![battle_final_mockup](https://user-images.githubusercontent.com/56926715/111814139-0860bf80-88d2-11eb-9d98-e01d384c2c9e.png)
