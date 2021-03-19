@@ -22,6 +22,7 @@ class Battle < Sinatra::Base
     @player_2_name = $game.player_2.name
     @player_1_hit_points = $game.player_1.hitpoints
     @player_2_hit_points = $game.player_2.hitpoints
+    @game = $game
     erb(:play)
   end
 
